@@ -1,12 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Um álbum chamado nós 💜</title>
+<title>Nosso mundinho JM&IL 💜</title>
 <meta name="theme-color" content="#17152f">
-<meta name="description" content="Um álbum de lembranças, encontros e de tudo o que ainda vamos viver.">
+<meta name="description" content="Nosso mundinho JM&IL: lembranças, encontros e tudo o que ainda vamos viver.">
 <style>
 :root {
   --night:#17152f; --blue:#25254b; --lilac:#c6afff;
@@ -79,7 +78,7 @@ footer .heart{font-size:23px}
 <header class="hero">
   <div class="moon">☾</div>
   <div class="eyebrow">Um pedacinho da nossa eternidade</div>
-  <h1>Um álbum<br>chamado nós</h1>
+  <h1>Nosso mundinho<br>JM&amp;IL</h1>
   <p class="subtitle">Uma história de amor contada em encontros, pequenos detalhes, saudades e tudo aquilo que ainda vamos viver.</p>
   <a class="button" href="#comeco">Abrir nosso álbum ↓</a>
 </header>
@@ -162,17 +161,7 @@ footer .heart{font-size:23px}
   <p id="countdownMessage" class="intro"></p>
 </section>
 
-<section>
-  <div class="section-label">Uma trilha sonora para nós</div>
-  <h2>Se a nossa história fosse música</h2>
-  <p class="intro">Canções que guardam um pouco daquilo que às vezes as palavras não conseguem explicar.</p>
-  <div class="card">
-    <div class="song">♫ O que é que há — Gal Costa</div>
-    <div class="song">♫ Cinnamon Girl — Lana Del Rey</div>
-    <div class="song">♫ Terra — ANAVITÓRIA</div>
-    <div class="song">♫ Combo da Sorte — Marina Sena</div>
-  </div>
-</section>
+
 
 <section>
   <div class="section-label">Para ler com calma</div>
@@ -198,44 +187,7 @@ footer .heart{font-size:23px}
   <p class="quote">“Este álbum não está completo. Ainda estamos vivendo as próximas páginas.”</p>
 </section>
 
-<footer>
-  <div class="heart">♡</div>
-  <p>Um álbum chamado nós</p>
-  <p>Começou em 28.11.2025 · Continua todos os dias.</p>
-  <p>Feito de lembranças, saudade e amor.</p>
-</footer>
 
-<script>
-function toggleLetter(){
-  const content=document.getElementById('letterContent');
-  const button=document.getElementById('openLetter');
-  const isOpen=content.classList.toggle('show');
-  button.textContent=isOpen?'Fechar a carta ♡':'Ler o restante da carta ♡';
-}
-function updateCountdown(){
-  const target=new Date('2026-12-24T12:00:00-03:00');
-  const now=new Date();
-  const diff=target-now;
-  const el=document.getElementById('countdown');
-  const msg=document.getElementById('countdownMessage');
-  if(diff<=0){
-    el.innerHTML='';
-    msg.textContent='O dia do reencontro chegou. Que comece mais um capítulo nosso. 💜';
-    return;
-  }
-  const days=Math.floor(diff/86400000);
-  const hours=Math.floor((diff%86400000)/3600000);
-  const minutes=Math.floor((diff%3600000)/60000);
-  const seconds=Math.floor((diff%60000)/1000);
-  el.innerHTML=[
-    ['Dias',days],['Horas',hours],['Minutos',minutes],['Segundos',seconds]
-  ].map(([label,value])=>'<div class="time"><strong>'+value+'</strong><span>'+label+'</span></div>').join('');
-  msg.textContent='Até 24 de dezembro de 2026';
-}
-updateCountdown();
-setInterval(updateCountdown,1000);
-</script>
-</body> 
 <section id="nosso-universo" style="max-width:900px;margin:55px auto;padding:30px 20px;text-align:center;color:#f7efff;font-family:Georgia,serif;">
   <h2 style="font-size:2rem;color:#e3c8ff;">Um pouco mais de nós</h2>
   <p style="color:#d4c4e8;line-height:1.8;">
@@ -316,4 +268,43 @@ setInterval(updateCountdown,1000);
   </div>
 </section>
 
+
+<footer>
+  <div class="heart">♡</div>
+  <p>Nosso mundinho JM&amp;IL</p>
+  <p>Começou em 28.11.2025 · Continua todos os dias.</p>
+  <p>Feito de lembranças, saudade e amor.</p>
+</footer>
+
+<script>
+function toggleLetter(){
+  const content=document.getElementById('letterContent');
+  const button=document.getElementById('openLetter');
+  const isOpen=content.classList.toggle('show');
+  button.textContent=isOpen?'Fechar a carta ♡':'Ler o restante da carta ♡';
+}
+function updateCountdown(){
+  const target=new Date('2026-12-24T12:00:00-03:00');
+  const now=new Date();
+  const diff=target-now;
+  const el=document.getElementById('countdown');
+  const msg=document.getElementById('countdownMessage');
+  if(diff<=0){
+    el.innerHTML='';
+    msg.textContent='O dia do reencontro chegou. Que comece mais um capítulo nosso. 💜';
+    return;
+  }
+  const days=Math.floor(diff/86400000);
+  const hours=Math.floor((diff%86400000)/3600000);
+  const minutes=Math.floor((diff%3600000)/60000);
+  const seconds=Math.floor((diff%60000)/1000);
+  el.innerHTML=[
+    ['Dias',days],['Horas',hours],['Minutos',minutes],['Segundos',seconds]
+  ].map(([label,value])=>'<div class="time"><strong>'+value+'</strong><span>'+label+'</span></div>').join('');
+  msg.textContent='Até 24 de dezembro de 2026';
+}
+updateCountdown();
+setInterval(updateCountdown,1000);
+</script>
+</body>
 </html>
