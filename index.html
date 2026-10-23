@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Um álbum chamado nós 💜</title>
+<meta name="theme-color" content="#17152f">
+<meta name="description" content="Um álbum de lembranças, encontros e de tudo o que ainda vamos viver.">
+<style>
+:root {
+  --night:#17152f; --blue:#25254b; --lilac:#c6afff;
+  --pink:#f1cbe6; --cream:#fff8f4; --muted:#c4bfd9;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--night);color:var(--cream);
+font-family:Georgia,'Times New Roman',serif;line-height:1.8}
+button,a{font:inherit}
+a{color:var(--lilac)}
+.hero{min-height:100svh;display:flex;flex-direction:column;
+align-items:center;justify-content:center;text-align:center;padding:32px 22px;
+background:radial-gradient(ellipse at 50% 35%,#47406d 0%,#252343 40%,#17152f 78%);
+position:relative;overflow:hidden}
+.hero:before{content:"✦     ·       ✧       ·    ✦";position:absolute;top:12%;
+color:#e3d7ff;font-size:22px;letter-spacing:14px;opacity:.8}
+.moon{font-size:66px;color:#f5e8c6;text-shadow:0 0 40px #c7b4ff;margin-bottom:14px}
+.eyebrow{text-transform:uppercase;letter-spacing:3px;font:11px Arial,sans-serif;color:var(--lilac)}
+h1{font-size:clamp(42px,9vw,78px);line-height:1.08;font-weight:normal;
+margin:16px 0 22px;max-width:850px}
+.subtitle{max-width:520px;color:#e3dced;font-size:18px}
+.button{display:inline-block;margin-top:28px;padding:12px 23px;border:1px solid #c6afff;
+border-radius:40px;color:var(--cream);text-decoration:none;transition:.2s}
+.button:hover{background:#c6afff;color:#17152f}
+section{padding:78px 22px;max-width:920px;margin:auto}
+.section-label{text-align:center;color:var(--lilac);font:11px Arial,sans-serif;
+letter-spacing:3px;text-transform:uppercase}
+h2{text-align:center;font-size:clamp(29px,6vw,44px);font-weight:normal;line-height:1.2}
+.intro{max-width:650px;text-align:center;margin:24px auto;color:#ded7eb}
+.quote{text-align:center;font-size:23px;font-style:italic;color:var(--pink);
+max-width:640px;margin:38px auto}
+.timeline{position:relative;margin:48px auto 0;max-width:690px}
+.timeline:before{content:"";position:absolute;left:10px;top:8px;bottom:8px;
+width:1px;background:linear-gradient(var(--lilac),#61547e,transparent)}
+.memory{position:relative;margin:0 0 32px;padding:0 0 0 38px}
+.memory:before{content:"";position:absolute;left:4px;top:10px;width:13px;height:13px;
+border-radius:50%;background:var(--lilac);box-shadow:0 0 15px #a88bff}
+.date{font:11px Arial,sans-serif;letter-spacing:2px;color:var(--lilac);text-transform:uppercase}
+.memory h3{font-size:24px;font-weight:normal;margin:5px 0}
+.memory p{margin:0;color:#d4cfe3}
+.card{border:1px solid #595078;border-radius:18px;padding:24px;
+background:linear-gradient(145deg,#282545,#1d1b38);margin-top:18px}
+.distance{text-align:center;background:linear-gradient(180deg,#252343,#17152f);
+border-top:1px solid #494365;border-bottom:1px solid #494365}
+.distance-number{font-size:clamp(38px,8vw,65px);color:var(--lilac);line-height:1.2}
+.places{display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap;
+margin:26px 0;color:#eee7ff}
+.heart{font-size:30px;color:#dfb5ef}
+.countdown{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:28px 0}
+.time{min-width:68px;border:1px solid #5e527f;border-radius:12px;padding:12px 8px}
+.time strong{display:block;font-size:27px;font-weight:normal;color:var(--lilac)}
+.time span{font:10px Arial,sans-serif;text-transform:uppercase;letter-spacing:1px;color:var(--muted)}
+.letter{background:#f4e8df;color:#302642;border-radius:5px;padding:clamp(24px,6vw,48px);
+box-shadow:0 15px 45px #0c0b1c}
+.letter h2{color:#55426f}
+.letter p{white-space:normal}
+#letterContent{display:none}
+#letterContent.show{display:block}
+.letter-button{background:#51416c;color:white;border:0;border-radius:30px;
+padding:12px 20px;cursor:pointer;margin-top:12px}
+.song{padding:12px 0;border-bottom:1px solid #48415f;color:#e5dcef}
+.song:last-child{border:0}
+footer{text-align:center;padding:45px 20px;color:#aaa3c6;font-size:14px}
+footer .heart{font-size:23px}
+@media(min-width:700px){.memory{padding-left:46px}.timeline:before{left:10px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="moon">☾</div>
+  <div class="eyebrow">Um pedacinho da nossa eternidade</div>
+  <h1>Um álbum<br>chamado nós</h1>
+  <p class="subtitle">Uma história de amor contada em encontros, pequenos detalhes, saudades e tudo aquilo que ainda vamos viver.</p>
+  <a class="button" href="#comeco">Abrir nosso álbum ↓</a>
+</header>
+
+<section id="comeco">
+  <div class="section-label">Página um · O começo</div>
+  <h2>Antes de sermos tantas lembranças</h2>
+  <p class="intro">Nossa história não começou com todas as respostas. Começou com um encontro, conversas que foram encontrando espaço e uma vontade de descobrir o que existia do outro lado.</p>
+  <p class="quote">“Algumas pessoas chegam e, sem fazer barulho, mudam o significado de estar em casa.”</p>
+</section>
+
+<section>
+  <div class="section-label">Capítulos da nossa história</div>
+  <h2>O tempo que já é nosso</h2>
+  <div class="timeline">
+    <article class="memory">
+      <div class="date">28 de novembro de 2025</div>
+      <h3>O primeiro encontro</h3>
+      <p>O dia em que nossos caminhos se cruzaram pela primeira vez. Uma data que ganhou um lugar só dela na nossa história.</p>
+    </article>
+    <article class="memory">
+      <div class="date">5 de dezembro de 2025</div>
+      <h3>As conversas se aproximaram</h3>
+      <p>Aos poucos, as conversas ganharam intimidade. O que era começo começou a se transformar em vontade de estar mais perto.</p>
+    </article>
+    <article class="memory">
+      <div class="date">9 a 13 de janeiro de 2026</div>
+      <h3>Curitiba: a primeira viagem</h3>
+      <p>Flores, uma rosa vermelha na chegada e três dias intensos de descoberta. E aquele momento em que você me pediu em namoro e eu me senti escolhida.</p>
+    </article>
+    <article class="memory">
+      <div class="date">16 a 23 de março de 2026</div>
+      <h3>Você veio para o meu lado do mapa</h3>
+      <p>Fortaleza e Cumbuco. Praia, sorvete, mariscos, comidas diferentes, Netflix na cama e a alegria de dividir os dias sem precisar imaginar como seria.</p>
+    </article>
+    <article class="memory">
+      <div class="date">18 de março de 2026</div>
+      <h3>O nosso sim</h3>
+      <p>Em Cumbuco, nossa história ganhou o nome de namoro. Uma lembrança para guardar não só pela data, mas por tudo o que ela passou a significar.</p>
+    </article>
+    <article class="memory">
+      <div class="date">8 a 15 de maio de 2026</div>
+      <h3>De volta ao abraço</h3>
+      <p>Mais uma viagem para diminuir a distância, colecionar momentos e lembrar que cada reencontro vale a espera.</p>
+    </article>
+    <article class="memory">
+      <div class="date">1 a 13 de junho de 2026</div>
+      <h3>Um aniversário e uma noite só nossa</h3>
+      <p>No dia 3, um bolinho com velas para celebrar sua vida. No dia 12, massa à luz de velas e um Dia dos Namorados cheio de intimidade e carinho.</p>
+    </article>
+    <article class="memory">
+      <div class="date">24 a 29 de julho de 2026</div>
+      <h3>Mais uma página em Curitiba</h3>
+      <p>Outra oportunidade de trocar a saudade pela presença e guardar mais um pouco da nossa vida juntas.</p>
+    </article>
+    <article class="memory">
+      <div class="date">10 a 20 de setembro de 2026</div>
+      <h3>Celebrar a vida pertinho</h3>
+      <p>Flores, presentes, um café da manhã cheio de carinho e a felicidade de viver meu aniversário com você. Um jeito bonito de me sentir amada nos detalhes.</p>
+    </article>
+    <article class="memory">
+      <div class="date">24 de dezembro de 2026</div>
+      <h3>O próximo capítulo nos espera</h3>
+      <p>Nosso próximo reencontro está no horizonte. Natal, Ano-Novo e a chance de começar novas tradições que sejam só nossas.</p>
+    </article>
+  </div>
+</section>
+
+<section class="distance">
+  <div class="section-label">Entre um abraço e outro</div>
+  <h2>Dois lugares.<br>Uma história.</h2>
+  <div class="distance-number">3.160 km</div>
+  <p class="intro">A distância entre os nossos endereços no mapa não mede o tamanho do que existe entre nós.</p>
+  <div class="places">
+    <span>Fortaleza · CE</span><span class="heart">♡</span><span>Colombo · PR</span>
+  </div>
+  <p class="intro">Por enquanto, contamos os dias. E fazemos cada encontro valer a espera.</p>
+  <h3 style="font-weight:normal;text-align:center">Até o próximo abraço</h3>
+  <div id="countdown" class="countdown" aria-live="polite"></div>
+  <p id="countdownMessage" class="intro"></p>
+</section>
+
+<section>
+  <div class="section-label">Uma trilha sonora para nós</div>
+  <h2>Se a nossa história fosse música</h2>
+  <p class="intro">Canções que guardam um pouco daquilo que às vezes as palavras não conseguem explicar.</p>
+  <div class="card">
+    <div class="song">♫ O que é que há — Gal Costa</div>
+    <div class="song">♫ Cinnamon Girl — Lana Del Rey</div>
+    <div class="song">♫ Terra — ANAVITÓRIA</div>
+    <div class="song">♫ Combo da Sorte — Marina Sena</div>
+  </div>
+</section>
+
+<section>
+  <div class="section-label">Para ler com calma</div>
+  <h2>Uma carta para você</h2>
+  <div class="letter">
+    <p>Meu amor,</p>
+    <p>Se eu pudesse guardar nossa história em alguma coisa, escolheria um álbum. Não porque as fotografias consigam contar tudo, mas porque cada uma seria uma porta para voltar a sentir.</p>
+    <p>Guardaria as flores, as chegadas, as despedidas, as conversas e os pequenos momentos em que estar com você fez o mundo parecer mais tranquilo. Guardaria também a saudade, porque até ela me lembra que existe alguém que vale a espera.</p>
+    <p>Gosto de pensar que nossa história não é feita só dos dias em que estamos juntas. Ela também vive nos planos, nas mensagens, na vontade de contar alguma coisa primeiro para você e em todos os futuros que começamos a imaginar.</p>
+    <div id="letterContent">
+      <p>Não sei quantas páginas ainda teremos, nem todos os lugares que vamos conhecer. Mas quero continuar descobrindo. Quero os dias especiais e os comuns, as viagens e a rotina, as conversas profundas e o silêncio confortável de simplesmente estarmos ali.</p>
+      <p>Que este álbum nunca fique pronto. Que a gente continue acrescentando páginas, fotografias, datas e histórias que um dia vamos contar sorrindo.</p>
+      <p>Com todo o meu amor,<br><em>a pessoa que continua escolhendo viver essa história com você.</em> 💜</p>
+    </div>
+    <button class="letter-button" id="openLetter" onclick="toggleLetter()">Ler o restante da carta ♡</button>
+  </div>
+</section>
+
+<section>
+  <div class="section-label">Ainda vamos viver</div>
+  <h2>As páginas em branco</h2>
+  <p class="intro">Nossa primeira ceia de Natal juntas. A virada do ano e as tradições que inventaremos. As praias que ainda vamos conhecer, os cafés demorados, a casa que talvez um dia dividiremos e todas as manhãs em que não precisaremos nos despedir tão cedo.</p>
+  <p class="quote">“Este álbum não está completo. Ainda estamos vivendo as próximas páginas.”</p>
+</section>
+
+<footer>
+  <div class="heart">♡</div>
+  <p>Um álbum chamado nós</p>
+  <p>Começou em 28.11.2025 · Continua todos os dias.</p>
+  <p>Feito de lembranças, saudade e amor.</p>
+</footer>
+
+<script>
+function toggleLetter(){
+  const content=document.getElementById('letterContent');
+  const button=document.getElementById('openLetter');
+  const isOpen=content.classList.toggle('show');
+  button.textContent=isOpen?'Fechar a carta ♡':'Ler o restante da carta ♡';
+}
+function updateCountdown(){
+  const target=new Date('2026-12-24T12:00:00-03:00');
+  const now=new Date();
+  const diff=target-now;
+  const el=document.getElementById('countdown');
+  const msg=document.getElementById('countdownMessage');
+  if(diff<=0){
+    el.innerHTML='';
+    msg.textContent='O dia do reencontro chegou. Que comece mais um capítulo nosso. 💜';
+    return;
+  }
+  const days=Math.floor(diff/86400000);
+  const hours=Math.floor((diff%86400000)/3600000);
+  const minutes=Math.floor((diff%3600000)/60000);
+  const seconds=Math.floor((diff%60000)/1000);
+  el.innerHTML=[
+    ['Dias',days],['Horas',hours],['Minutos',minutes],['Segundos',seconds]
+  ].map(([label,value])=>'<div class="time"><strong>'+value+'</strong><span>'+label+'</span></div>').join('');
+  msg.textContent='Até 24 de dezembro de 2026';
+}
+updateCountdown();
+setInterval(updateCountdown,1000);
+</script>
+</body>
+</html>
