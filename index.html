@@ -253,7 +253,6 @@ body{background:radial-gradient(ellipse at 15% 10%,#28234d 0,transparent 35%),va
 <section id="nossos-rituais">
   <div class="section-label">O amor nos dias comuns</div>
   <h2>Coisas que são tão nossas</h2>
-  <div class="love-stats"><div class="stat"><strong id="daysTogether">—</strong><span>dias desde o nosso sim</span></div><div class="stat"><strong>18.03</strong><span>o dia em que IL pediu JM</span></div></div>
   <div class="ritual-list">
     <div class="ritual"><b>☀️ Nossos bons-dias:</b> um jeito de começar o dia perto, mesmo longe.</div>
     <div class="ritual"><b>🎶 Nossa trilha sonora:</b> músicas que dizem o que às vezes a gente não consegue.</div>
@@ -424,9 +423,6 @@ setInterval(updateCountdown,1000);
   star.style.left=((i*73+17)%100)+'%';star.style.top=((i*47+11)%100)+'%';
   star.style.animationDelay=((i%9)*.37)+'s';star.style.fontSize=(9+i%11)+'px';sky.appendChild(star);
  }
- const start=Date.UTC(2026,2,18),today=new Date();
- const current=Date.UTC(today.getFullYear(),today.getMonth(),today.getDate());
- document.getElementById('daysTogether').textContent=Math.max(0,Math.floor((current-start)/86400000));
  const days=[
  ['24/12','Nossa noite de Natal','Ceia, música, uma prece e uma fotografia.'],
  ['25/12','Natal de pijama','Café demorado e cartinhas.'],
