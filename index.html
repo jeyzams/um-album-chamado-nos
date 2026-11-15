@@ -109,6 +109,11 @@ body{background:radial-gradient(ellipse at 15% 10%,#28234d 0,transparent 35%),va
 .trip-item:has(input:checked) strong{text-decoration:line-through;opacity:.75}
 .note{font-size:12px;color:#cfc4df;text-align:center}
 @media(prefers-reduced-motion:reduce){.star{animation:none}.symbol-card{transition:none}}
+.our-days-section{text-align:center;position:relative;padding-top:95px;padding-bottom:95px}
+.our-days-panel{max-width:730px;margin:30px auto 0;padding:38px 20px;border:1px solid #8570b0;border-radius:26px;background:radial-gradient(circle at top,#41345f,#211d3d 75%);box-shadow:0 20px 65px #0b0924}
+.our-days-number{display:block;font:normal clamp(76px,18vw,142px)/1 Georgia,serif;color:#f1cbe6;text-shadow:0 0 38px #a88bff66;margin:18px 0 10px}
+.our-days-caption{font-size:clamp(20px,4vw,28px);color:#fff8f4}
+.our-days-note{color:#d4cfe3;max-width:510px;margin:18px auto 0}
 </style>
 </head>
 <body>
@@ -186,6 +191,18 @@ body{background:radial-gradient(ellipse at 15% 10%,#28234d 0,transparent 35%),va
   </div>
 </section>
 
+<section id="desde-janeiro" class="our-days-section">
+  <div class="section-label">Desde 09 de janeiro de 2026</div>
+  <h2>Há tantos dias, nós duas.</h2>
+  <div class="our-days-panel">
+    <span aria-hidden="true" style="font-size:32px">✦ 💜 ✦</span>
+    <strong id="ourDaysCount" class="our-days-number" aria-live="off">—</strong>
+    <div class="our-days-caption">dias de nós, desde 09/01/2026</div>
+    <p class="our-days-note">Desde aquele janeiro, entre chegadas, despedidas, domingos, flores e reencontros, seguimos escrevendo a nossa história. E o melhor é saber que ela continua.</p>
+  </div>
+  <p class="intro">Um dia de cada vez. Uma lembrança de cada vez. JM &amp; IL. 🫀💜🖤</p>
+</section>
+
 <section class="distance">
   <div class="section-label">Entre um abraço e outro</div>
   <h2>Dois lugares.<br>Uma história.</h2>
@@ -229,7 +246,7 @@ body{background:radial-gradient(ellipse at 15% 10%,#28234d 0,transparent 35%),va
     <div class="symbol-card"><span class="emoji">🌌</span><h3>Céu estrelado</h3><p>Van Gogh e a frase de IL: “Você é meu céu estrelado do Van Gogh”.</p></div>
     <div class="symbol-card"><span class="emoji">☕</span><h3>O café</h3><p>O primeiro encontro, os chocolates, o nervosismo e tantos cafés que ainda queremos dividir.</p></div>
     <div class="symbol-card"><span class="emoji">🫂</span><h3>Nosso domingo</h3><p>Um dia que ganhou outro significado. Nosso ritual de estar juntas, mesmo quando a saudade aparece.</p></div>
-    <div class="symbol-card"><span class="emoji">💜</span><h3>Bebezinha do Meireles</h3><p>Um apelido que mora nas nossas conversas e que só faz sentido inteiro para nós.</p></div>
+    <div class="symbol-card"><span class="emoji">💌</span><h3>Nosso mundinho</h3><p>Uma expressão que nasceu nas nossas conversas e virou o nome deste cantinho, onde guardamos tudo o que é só nosso.</p></div>
     <div class="symbol-card"><span class="emoji">🌊</span><h3>Cumbuco</h3><p>O lugar onde, em 18 de março de 2026, IL pediu JM em namoro. O nosso sim.</p></div>
   </div>
 </section>
@@ -367,6 +384,15 @@ function toggleLetter(){
   const isOpen=content.classList.toggle('show');
   button.textContent=isOpen?'Fechar a carta ♡':'Ler o restante da carta ♡';
 }
+function updateOurDays(){
+  // Usa a data civil de Brasília para evitar mudanças antecipadas por fuso horário.
+  const parts=new Intl.DateTimeFormat('en-US',{timeZone:'America/Sao_Paulo',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());
+  const values=Object.fromEntries(parts.map(p=>[p.type,p.value]));
+  const today=Date.UTC(Number(values.year),Number(values.month)-1,Number(values.day));
+  const start=Date.UTC(2026,0,9);
+  document.getElementById('ourDaysCount').textContent=Math.max(0,Math.floor((today-start)/86400000)).toLocaleString('pt-BR');
+}
+updateOurDays();
 function updateCountdown(){
   const target=new Date('2026-12-24T12:00:00-03:00');
   const now=new Date();
