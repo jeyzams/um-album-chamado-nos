@@ -72,6 +72,43 @@ padding:12px 20px;cursor:pointer;margin-top:12px}
 footer{text-align:center;padding:45px 20px;color:#aaa3c6;font-size:14px}
 footer .heart{font-size:23px}
 @media(min-width:700px){.memory{padding-left:46px}.timeline:before{left:10px}}
+
+/* Nosso Mundinho 2.0 — detalhes e interações */
+:root{--gold:#f4d99a}
+body{background:radial-gradient(ellipse at 15% 10%,#28234d 0,transparent 35%),var(--night)}
+.hero{isolation:isolate}
+.stars{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:-1}
+.star{position:absolute;color:#fff5d5;opacity:.6;animation:twinkle 3s ease-in-out infinite alternate}
+@keyframes twinkle{from{opacity:.15;transform:scale(.7)}to{opacity:.9;transform:scale(1.25)}}
+.hero .moon{filter:drop-shadow(0 0 18px #c6afff)}
+.mini-nav{display:flex;justify-content:center;flex-wrap:wrap;gap:9px;margin-top:22px;max-width:780px}
+.mini-nav a{color:#f7eaff;text-decoration:none;font:12px Arial,sans-serif;border:1px solid #7c6a9b;border-radius:30px;padding:8px 13px;background:#ffffff0c}
+.mini-nav a:hover,.mini-nav a:focus-visible{background:#665184}
+.section-intro{max-width:700px;text-align:center;margin:0 auto 28px;color:#ded7eb}
+.symbol-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
+.symbol-card{border:1px solid #6d608b;background:linear-gradient(145deg,#302a50,#201d3c);padding:23px;border-radius:20px;text-align:left;min-height:190px;transition:transform .2s}
+.symbol-card:hover{transform:translateY(-3px)}
+.symbol-card .emoji{font-size:32px;display:block;margin-bottom:8px}
+.symbol-card h3{font-size:20px;font-weight:normal;color:var(--pink);margin:6px 0}
+.symbol-card p{font-size:14px;color:#dcd5e8;margin:0;line-height:1.7}
+.love-stats{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin:22px 0}
+.stat{background:#2b2649;border:1px solid #675781;border-radius:18px;padding:18px 25px;text-align:center;min-width:160px}
+.stat strong{font-size:32px;font-weight:normal;color:var(--gold);display:block}
+.stat span{font:12px Arial,sans-serif;color:#e5d8ef}
+.ritual-list{max-width:720px;margin:24px auto;display:grid;gap:10px}
+.ritual{padding:14px 18px;border-radius:14px;background:#292342;border:1px solid #594a74}
+.ritual b{color:var(--pink);font-weight:normal}
+.trip-progress{height:9px;border-radius:10px;background:#4c4263;overflow:hidden;margin:16px auto;max-width:690px}
+.trip-progress div{height:100%;width:0;background:linear-gradient(90deg,#b49af2,#f0d0a4);transition:width .2s}
+.trip-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:12px}
+.trip-item{display:flex;align-items:flex-start;gap:11px;padding:15px;border:1px solid #62537e;border-radius:16px;background:#292441;cursor:pointer}
+.trip-item input{accent-color:#b79ee8;margin-top:6px;transform:scale(1.2)}
+.trip-item strong{display:block;color:#f1d3ec;font-size:15px;font-weight:normal}
+.trip-item small{display:block;color:#d8cfe6;line-height:1.6;margin-top:4px}
+.trip-item:has(input:checked){background:#3c345c;border-color:#c5b0f5}
+.trip-item:has(input:checked) strong{text-decoration:line-through;opacity:.75}
+.note{font-size:12px;color:#cfc4df;text-align:center}
+@media(prefers-reduced-motion:reduce){.star{animation:none}.symbol-card{transition:none}}
 </style>
 </head>
 <body>
@@ -81,6 +118,8 @@ footer .heart{font-size:23px}
   <h1>Nosso mundinho<br>JM&amp;IL</h1>
   <p class="subtitle">Uma história de amor contada em encontros, pequenos detalhes, saudades e tudo aquilo que ainda vamos viver.</p>
   <a class="button" href="#comeco">Abrir nosso álbum ↓</a>
+  <div class="stars" id="stars" aria-hidden="true"></div>
+  <nav class="mini-nav" aria-label="Explorar nosso mundinho"><a href="#nossos-simbolos">Nossos símbolos</a><a href="#nossos-rituais">Nossos rituais</a><a href="#dias-juntas">18 dias de nós</a><a href="#nosso-album">Fotografias</a></nav>
 </header>
 
 <section id="comeco">
@@ -107,7 +146,7 @@ footer .heart{font-size:23px}
     <article class="memory">
       <div class="date">9 a 13 de janeiro de 2026</div>
       <h3>Curitiba: a primeira viagem</h3>
-      <p>Flores, uma rosa vermelha na chegada e três dias intensos de descoberta. E aquele momento em que você me pediu em namoro e eu me senti escolhida.</p>
+      <p>Flores, uma rosa vermelha na chegada e dias intensos de descoberta. Ainda não sabíamos tudo o que viveríamos, mas já existia a vontade de ficar mais perto.</p>
     </article>
     <article class="memory">
       <div class="date">16 a 23 de março de 2026</div>
@@ -117,7 +156,7 @@ footer .heart{font-size:23px}
     <article class="memory">
       <div class="date">18 de março de 2026</div>
       <h3>O nosso sim</h3>
-      <p>Em Cumbuco, nossa história ganhou o nome de namoro. Uma lembrança para guardar não só pela data, mas por tudo o que ela passou a significar.</p>
+      <p>Em Cumbuco, IL pediu JM em namoro. Foi o nosso sim, no dia 18 de março de 2026, diante de tudo o que ainda queríamos viver juntas.</p>
     </article>
     <article class="memory">
       <div class="date">8 a 15 de maio de 2026</div>
@@ -178,6 +217,42 @@ footer .heart{font-size:23px}
     </div>
     <button class="letter-button" id="openLetter" onclick="toggleLetter()">Ler o restante da carta ♡</button>
   </div>
+</section>
+
+
+<section id="nossos-simbolos">
+  <div class="section-label">Um universo que só a gente entende</div>
+  <h2>Nosso pequeno dicionário</h2>
+  <p class="section-intro">Tem coisas que não precisam de grandes explicações. Basta uma palavra, uma flor ou uma lembrança para nos encontrar de novo.</p>
+  <div class="symbol-grid">
+    <div class="symbol-card"><span class="emoji">🌻</span><h3>Girassol</h3><p>Flores enviadas, recebidas e guardadas. Nosso jeito de transformar saudade em presença.</p></div>
+    <div class="symbol-card"><span class="emoji">🌌</span><h3>Céu estrelado</h3><p>Van Gogh e a frase de IL: “Você é meu céu estrelado do Van Gogh”.</p></div>
+    <div class="symbol-card"><span class="emoji">☕</span><h3>O café</h3><p>O primeiro encontro, os chocolates, o nervosismo e tantos cafés que ainda queremos dividir.</p></div>
+    <div class="symbol-card"><span class="emoji">🫂</span><h3>Nosso domingo</h3><p>Um dia que ganhou outro significado. Nosso ritual de estar juntas, mesmo quando a saudade aparece.</p></div>
+    <div class="symbol-card"><span class="emoji">💜</span><h3>Bebezinha do Meireles</h3><p>Um apelido que mora nas nossas conversas e que só faz sentido inteiro para nós.</p></div>
+    <div class="symbol-card"><span class="emoji">🌊</span><h3>Cumbuco</h3><p>O lugar onde, em 18 de março de 2026, IL pediu JM em namoro. O nosso sim.</p></div>
+  </div>
+</section>
+<section id="nossos-rituais">
+  <div class="section-label">O amor nos dias comuns</div>
+  <h2>Coisas que são tão nossas</h2>
+  <div class="love-stats"><div class="stat"><strong id="daysTogether">—</strong><span>dias desde o nosso sim</span></div><div class="stat"><strong>18.03</strong><span>o dia em que IL pediu JM</span></div></div>
+  <div class="ritual-list">
+    <div class="ritual"><b>☀️ Nossos bons-dias:</b> um jeito de começar o dia perto, mesmo longe.</div>
+    <div class="ritual"><b>🎶 Nossa trilha sonora:</b> músicas que dizem o que às vezes a gente não consegue.</div>
+    <div class="ritual"><b>💌 Cartas e mensagens:</b> palavras que guardamos para reler e sentir de novo.</div>
+    <div class="ritual"><b>🍨 Sorvetes e pequenos passeios:</b> provar sabores, descobrir lugares e colecionar histórias.</div>
+    <div class="ritual"><b>🏡 Nosso futuro:</b> cafés demorados, uma varanda e a alegria de não precisar contar despedidas.</div>
+  </div>
+</section>
+<section id="dias-juntas">
+  <div class="section-label">24.12.2026 — 10.01.2027</div>
+  <h2>18 dias de nós</h2>
+  <p class="section-intro">Uma ideia para cada dia. Sem obrigação de cumprir tudo: o mais importante é viver juntas. Marque o que realizarmos neste navegador.</p>
+  <p class="note" id="tripCounter" aria-live="polite">0 de 18 memórias vividas</p>
+  <div class="trip-progress"><div id="tripBar"></div></div>
+  <div class="trip-grid" id="tripGrid"></div>
+  <p class="note">As marcações ficam salvas apenas neste navegador e dispositivo. Para guardar fotos e textos no site, será necessária uma atualização dos arquivos.</p>
 </section>
 
 <section>
@@ -305,6 +380,52 @@ function updateCountdown(){
 }
 updateCountdown();
 setInterval(updateCountdown,1000);
+
+// Detalhes visuais sem bibliotecas externas
+(function(){
+ const sky=document.getElementById('stars');
+ for(let i=0;i<58;i++){
+  const star=document.createElement('span');star.className='star';star.textContent=i%4===0?'✦':'·';
+  star.style.left=((i*73+17)%100)+'%';star.style.top=((i*47+11)%100)+'%';
+  star.style.animationDelay=((i%9)*.37)+'s';star.style.fontSize=(9+i%11)+'px';sky.appendChild(star);
+ }
+ const start=Date.UTC(2026,2,18),today=new Date();
+ const current=Date.UTC(today.getFullYear(),today.getMonth(),today.getDate());
+ document.getElementById('daysTogether').textContent=Math.max(0,Math.floor((current-start)/86400000));
+ const days=[
+ ['24/12','Nossa noite de Natal','Ceia, música, uma prece e uma fotografia.'],
+ ['25/12','Natal de pijama','Café demorado e cartinhas.'],
+ ['26/12','Sorvetes juntas','Experimentar os sabores preferidos.'],
+ ['27/12','Nosso domingo','Um dia inteirinho para nós.'],
+ ['28/12','Dia do girassol','Uma flor e uma mensagem.'],
+ ['29/12','Recriar o primeiro café','Chocolates e lembranças do começo.'],
+ ['30/12','Noite de Van Gogh','Pintar um céu estrelado juntas.'],
+ ['31/12','Nossa virada','Escrever desejos para o próximo ano.'],
+ ['01/01','Primeiro café de 2027','Fotografar o primeiro amanhecer.'],
+ ['02/01','Cozinhar juntas','Fazer um strogonoff especial.'],
+ ['03/01','Domingo de filme','Coberta, filme e sossego.'],
+ ['04/01','Encontro surpresa','Cada uma prepara uma surpresa.'],
+ ['05/01','Cápsula do tempo','Guardar cartas e uma lembrança.'],
+ ['06/01','Dia de fotografias','Registrar os detalhes mais simples.'],
+ ['07/01','Nossa playlist','Reouvir as músicas da nossa história.'],
+ ['08/01','Um dia de casa','Mercado, comida e rotina compartilhada.'],
+ ['09/01','Atualizar nosso mundinho','Escolher fotos e escrever uma memória.'],
+ ['10/01','Nosso último café da viagem','Uma carta e um plano para o próximo encontro.']
+ ];
+ const key='jmil-trip-2026-v1';let saved=[];
+ try{saved=JSON.parse(localStorage.getItem(key)||'[]');if(!Array.isArray(saved))saved=[]}catch(e){}
+ const grid=document.getElementById('tripGrid');
+ days.forEach(([date,title,desc],i)=>{
+  const label=document.createElement('label');label.className='trip-item';
+  const check=document.createElement('input');check.type='checkbox';check.checked=saved.includes(i);
+  const content=document.createElement('span');const heading=document.createElement('strong');heading.textContent=date+' · '+title;
+  const sub=document.createElement('small');sub.textContent=desc;content.append(heading,sub);label.append(check,content);grid.append(label);
+  check.addEventListener('change',()=>{saved=Array.from(grid.querySelectorAll('input')).flatMap((x,j)=>x.checked?[j]:[]);
+   try{localStorage.setItem(key,JSON.stringify(saved))}catch(e){} updateTrip();});
+ });
+ function updateTrip(){document.getElementById('tripCounter').textContent=saved.length+' de 18 memórias vividas';document.getElementById('tripBar').style.width=(saved.length/18*100)+'%'}
+ updateTrip();
+})();
 </script>
 </body>
 </html>
